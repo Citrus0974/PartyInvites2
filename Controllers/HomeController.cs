@@ -20,6 +20,11 @@ namespace PartyInvites2.Controllers
         {
             return View();
         }
+
+        public ViewResult GuestForm()
+        {
+             return View();
+        }
         //private readonly ILogger<HomeController> _logger;
 
         //public HomeController(ILogger<HomeController> logger)
