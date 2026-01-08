@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol;
 using PartyInvites2.Models;
 
 namespace PartyInvites2.Controllers
@@ -15,15 +16,24 @@ namespace PartyInvites2.Controllers
             ViewBag.datetime = now;
             return View("MyView");
         }
-
+                
         public ViewResult MyView()
         {
             return View();
         }
 
+        [HttpGet]
         public ViewResult GuestForm()
         {
              return View();
+        }
+
+        [HttpPost]
+        public ViewResult GuestForm(GuestResponse guestResponse)
+        {
+            string str = guestResponse.ToJson();
+            Console.WriteLine(str);
+            return View();
         }
         //private readonly ILogger<HomeController> _logger;
 

@@ -14,6 +14,28 @@
 <body>
     <div>
         <p>guest form</p>
+        <form asp-action="GuestForm" method="post">
+            <p>
+                <label asp-for="Name">Name: </label>
+                <input asp-for="Name" />
+            </p>
+            <p>
+                <label asp-for="Email">Email: </label>
+                <input asp-for="Email" />
+            </p>
+            <p>
+                <label asp-for="Phone">Phone: </label>
+                <input asp-for="Phone" />
+            </p>
+            <p>
+                <select asp-for="WillAttend">
+                    <option value="">Choose</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </p>
+            <button type="submit">Send  </button>
+        </form>
     </div>
 </body>
 </html>
