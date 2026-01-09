@@ -2,7 +2,9 @@ using System;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol;
+using NuGet.Protocol.Core.Types;
 using PartyInvites2.Models;
+using System.Linq;
 
 namespace PartyInvites2.Controllers
 {
@@ -31,9 +33,15 @@ namespace PartyInvites2.Controllers
         [HttpPost]
         public ViewResult GuestForm(GuestResponse guestResponse)
         {
-            string str = guestResponse.ToJson();
-            Console.WriteLine(str);
-            return View();
+            //string str = guestResponse.ToJson();
+            //Console.WriteLine(str);
+            StorageClass.AddResponse(guestResponse);
+            return View("Thanks", guestResponse);
+        }
+
+        public ViewResult ListResponses()
+        {
+            return View(StorageClass.Responses.Where(r => r.WillAttend == true));
         }
         //private readonly ILogger<HomeController> _logger;
 
