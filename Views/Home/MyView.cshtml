@@ -8,13 +8,17 @@
     <head>
         <meta name="viewport" content="width=device-width" />
         <title> INDEX2 </title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     </head>
     <body>
-        <div>
+        <div class="text-center">
+        <h3>
             @ViewBag.Greeting world 2 (view)    <br />
             @ViewBag.Greeting                   <br />
             @ViewBag.datetime                   <br />
-            <a asp-action="GuestForm">send form now</a>
+        </h3>
+        <h4>Welcome to our party</h4>
+            <a asp-action="GuestForm" class="btn btn-primary">Send attending form now!</a>
         </div>
     </body>
 </html>

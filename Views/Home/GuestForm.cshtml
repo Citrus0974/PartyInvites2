@@ -10,11 +10,13 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title> GuestForm </title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
-    <div>
+    <div class="panel panel-success text-center">
         <p>guest form</p>
-        <form asp-action="GuestForm" method="post">
+        <form asp-action="GuestForm" method="post" class="p-md-1">
             <div asp-validation-summary="All"></div>
             <p>
                 <label asp-for="Name">Name: </label>
@@ -35,7 +37,7 @@
                     <option value="false">No</option>
                 </select>
             </p>
-            <button type="submit">Send  </button>
+            <button type="submit" class="btn btn-primary">Send  </button>
         </form>
     </div>
 </body>

@@ -37,7 +37,7 @@ namespace PartyInvites2.Controllers
             //Console.WriteLine(str);
             if (!ModelState.IsValid)
             {
-                return View();  //error. try again
+                return View();  //error. try again with errors div
             }
                 StorageClass.AddResponse(guestResponse);
             return View("Thanks", guestResponse);
