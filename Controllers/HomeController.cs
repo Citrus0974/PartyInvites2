@@ -35,7 +35,11 @@ namespace PartyInvites2.Controllers
         {
             //string str = guestResponse.ToJson();
             //Console.WriteLine(str);
-            StorageClass.AddResponse(guestResponse);
+            if (!ModelState.IsValid)
+            {
+                return View();  //error. try again
+            }
+                StorageClass.AddResponse(guestResponse);
             return View("Thanks", guestResponse);
         }
 

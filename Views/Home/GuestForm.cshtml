@@ -15,6 +15,7 @@
     <div>
         <p>guest form</p>
         <form asp-action="GuestForm" method="post">
+            <div asp-validation-summary="All"></div>
             <p>
                 <label asp-for="Name">Name: </label>
                 <input asp-for="Name" />
